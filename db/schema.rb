@@ -30,43 +30,42 @@ ActiveRecord::Schema.define(version: 2018_08_14_034800) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "locals", force: :cascade do |t|
-    t.string "avatar_url"
-    t.string "name"
-    t.bigint "city_id"
-    t.text "biography"
-    t.string "contact_details", default: [], array: true
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["city_id"], name: "index_locals_on_city_id"
-  end
-
   create_table "places", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.string "main_photo_url"
     t.string "photo_urls", default: [], array: true
-    t.bigint "local_id"
+    t.bigint "user_id"
     t.bigint "city_id"
     t.float "latitude"
     t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["city_id"], name: "index_places_on_city_id"
-    t.index ["local_id"], name: "index_places_on_local_id"
+    t.index ["user_id"], name: "index_places_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "open_id"
     t.float "latitude"
     t.float "longitude"
+    t.string "avatar_url"
+    t.string "name"
+    t.bigint "city_id"
+    t.text "biography"
+    t.string "email"
+    t.string "phone_number"
+    t.string "wechat_id"
+    t.string "website"
+    t.boolean "is_local"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_users_on_city_id"
   end
 
   add_foreign_key "bookmarks", "places"
   add_foreign_key "bookmarks", "users"
-  add_foreign_key "locals", "cities"
   add_foreign_key "places", "cities"
-  add_foreign_key "places", "locals"
+  add_foreign_key "places", "users"
+  add_foreign_key "users", "cities"
 end
