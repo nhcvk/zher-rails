@@ -1,1 +1,1 @@
-json.extract! @place, :name, :description, :main_photo_url, :photo_urls, :user_id, :city_id, :latitude, :longitude
+json.extract! @place, :id, :name, :description, :main_photo_url, :photo_urls, :user_id, :city_id, :latitude, :longitude
