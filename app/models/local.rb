@@ -1,4 +1,4 @@
 class Local < ApplicationRecord
-    has_many: places
-    belongs_to: city
+    has_many :places
+    belongs_to :city
 end
