@@ -1,2 +1,0 @@
-class LocalsPlace < ApplicationRecord
-end

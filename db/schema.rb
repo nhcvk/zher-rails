@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_14_060118) do
+ActiveRecord::Schema.define(version: 2018_08_14_034800) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,15 +41,6 @@ ActiveRecord::Schema.define(version: 2018_08_14_060118) do
     t.index ["city_id"], name: "index_locals_on_city_id"
   end
 
-  create_table "locals_places", force: :cascade do |t|
-    t.bigint "local_id"
-    t.bigint "place_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["local_id"], name: "index_locals_places_on_local_id"
-    t.index ["place_id"], name: "index_locals_places_on_place_id"
-  end
-
   create_table "places", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -76,8 +67,6 @@ ActiveRecord::Schema.define(version: 2018_08_14_060118) do
   add_foreign_key "bookmarks", "places"
   add_foreign_key "bookmarks", "users"
   add_foreign_key "locals", "cities"
-  add_foreign_key "locals_places", "locals"
-  add_foreign_key "locals_places", "places"
   add_foreign_key "places", "cities"
   add_foreign_key "places", "locals"
 end
