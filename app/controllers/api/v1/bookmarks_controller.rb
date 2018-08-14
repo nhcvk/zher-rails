@@ -1,19 +1,16 @@
 class Api::V1::BookmarksController < Api::V1::BaseController
-    before_action :set_bookmark, only: [:show, :destroy]
+    before_action :set_user, only: [:index, :show, :destroy]
 
 
     def index
-        @bookmarks = Bookmark.all
+        @bookmarks = @user.places
+        render json: @bookmarks
         #(.order by distance)
     end
 
     def create
         @bookmark = Bookmark.new
-        if @bookmark.save
-            render :show, status: :created
-        else 
-            render_error
-        end
+        @bookmark.save
     end
 
     def destroy
@@ -23,15 +20,11 @@ class Api::V1::BookmarksController < Api::V1::BaseController
 
     private
 
-    def set_bookmark
-        @bookmark = Bookmark.find(params[:id])
+    def set_user
+        @user = User.find(params[:user_id])
     end
 
     def bookmark_params
-        params.require(:place).permit(:user_id, :place_id)
-    end
-
-    def render_error
-        render json: { errors: @bookmark.errors.full_messages}, status: :unprocessable_entity
+        params.require(:bookmark).permit(:user_id, :place_id)
     end
 end
