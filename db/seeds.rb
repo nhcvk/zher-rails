@@ -19,7 +19,7 @@ mockPlace = [
     {
         name: 'Taikooli',
         description: 'Lorem ipsum dolor sitamet, consectetur dipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
-        main_photo_url: 'https://loremflickr.com/320/240',
+        main_photo_url: 'https://loremflickr.com/1000/700',
         photo_urls: ['https://loremflickr.com/320/240', 'https://loremflickr.com/320/240', 'https://loremflickr.com/320/240'],
         user_id: 1,
         city_id: 1,
@@ -29,7 +29,7 @@ mockPlace = [
     {
         name: 'Jiuyanqiao',
         description: 'Lorem ipsum dolor sitamet, consectetur dipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
-        main_photo_url: 'https://loremflickr.com/320/240',
+        main_photo_url: 'https://loremflickr.com/1000/700',
         photo_urls: ['https://loremflickr.com/320/240', 'https://loremflickr.com/320/240', 'https://loremflickr.com/320/240'],
         user_id: 2,
         city_id: 1,
@@ -39,7 +39,7 @@ mockPlace = [
     {
         name: 'IFS',
         description: 'Lorem ipsum dolor sitamet, consectetur dipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
-        main_photo_url: 'https://loremflickr.com/320/240',
+        main_photo_url: 'https://loremflickr.com/1000/700',
         photo_urls: ['https://loremflickr.com/320/240', 'https://loremflickr.com/320/240', 'https://loremflickr.com/320/240'],
         user_id: 2,
         city_id: 1,
