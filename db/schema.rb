@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_14_052119) do
+ActiveRecord::Schema.define(version: 2018_08_14_060118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookmarks", force: :cascade do |t|
     t.bigint "user_id"
+    t.bigint "place_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "place_id"
     t.index ["place_id"], name: "index_bookmarks_on_place_id"
     t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
@@ -31,16 +31,23 @@ ActiveRecord::Schema.define(version: 2018_08_14_052119) do
   end
 
   create_table "locals", force: :cascade do |t|
-    t.string "local_photo_url"
+    t.string "avatar_url"
     t.string "name"
+    t.bigint "city_id"
     t.text "biography"
     t.string "contact_details", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "city_id"
-    t.bigint "place_id"
     t.index ["city_id"], name: "index_locals_on_city_id"
-    t.index ["place_id"], name: "index_locals_on_place_id"
+  end
+
+  create_table "locals_places", force: :cascade do |t|
+    t.bigint "local_id"
+    t.bigint "place_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["local_id"], name: "index_locals_places_on_local_id"
+    t.index ["place_id"], name: "index_locals_places_on_place_id"
   end
 
   create_table "places", force: :cascade do |t|
@@ -50,12 +57,10 @@ ActiveRecord::Schema.define(version: 2018_08_14_052119) do
     t.string "photo_urls", default: [], array: true
     t.bigint "local_id"
     t.bigint "city_id"
-    t.bigint "bookmark_id"
     t.float "latitude"
     t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["bookmark_id"], name: "index_places_on_bookmark_id"
     t.index ["city_id"], name: "index_places_on_city_id"
     t.index ["local_id"], name: "index_places_on_local_id"
   end
@@ -71,8 +76,8 @@ ActiveRecord::Schema.define(version: 2018_08_14_052119) do
   add_foreign_key "bookmarks", "places"
   add_foreign_key "bookmarks", "users"
   add_foreign_key "locals", "cities"
-  add_foreign_key "locals", "places"
-  add_foreign_key "places", "bookmarks"
+  add_foreign_key "locals_places", "locals"
+  add_foreign_key "locals_places", "places"
   add_foreign_key "places", "cities"
   add_foreign_key "places", "locals"
 end

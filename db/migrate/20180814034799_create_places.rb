@@ -7,7 +7,6 @@ class CreatePlaces < ActiveRecord::Migration[5.2]
       t.string :photo_urls, array: true, default: []
       t.references :local, foreign_key: true
       t.references :city, foreign_key: true
-      t.references :bookmark, foreign_key: true
       t.float :latitude
       t.float :longitude   
 
