@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  post '/login', to: "login#login"
+
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
+      post '/login', to: "login#login"
       resources :places
       resources :cities, only: [:index]
       resources :users, only: [:show, :update] do
