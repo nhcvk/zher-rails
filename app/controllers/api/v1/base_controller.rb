@@ -4,7 +4,7 @@ class Api::V1::BaseController < ActionController::Base
     protect_from_forgery with: :null_session
 
     private
-    
+
     def not_found(exception)
            render json: { error: exception.message }, status: :not_found
 end
