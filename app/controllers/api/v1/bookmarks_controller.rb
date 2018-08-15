@@ -4,7 +4,7 @@ class Api::V1::BookmarksController < Api::V1::BaseController
 
 
     def index
-        @bookmarks = @user.places
+        @bookmarks = @user.bookmarks
         render json: @bookmarks
         #(.order by distance)
     end
@@ -17,7 +17,7 @@ class Api::V1::BookmarksController < Api::V1::BaseController
     end
 
     def destroy
-        @bookmark = Bookmark.find(params[:id])
+        @bookmark = @user.bookmarks.find(params[:id])
         @bookmark.destroy
         head :no_content
     end
