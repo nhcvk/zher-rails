@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       post '/login', to: "login#login"
       resources :places
       resources :cities, only: [:index]
-      resources :users, only: [:show, :update] do
+      resources :users, only: [:index, :show, :update] do
         resources :bookmarks, only: [:index, :create, :destroy]
       end
     end
