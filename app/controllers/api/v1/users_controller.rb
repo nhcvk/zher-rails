@@ -1,6 +1,10 @@
 class Api::V1::UsersController < Api::V1::BaseController
     before_action :set_user, only: [:show, :update]
     
+    def index
+        @users = User.all
+    end
+
     def show
         render json: @user
     end
