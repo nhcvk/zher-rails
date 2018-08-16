@@ -2,7 +2,8 @@ class Api::V1::PlacesController < Api::V1::BaseController
     before_action :set_place, only: [:show, :update, :destroy]
     
     def index
-        @places = Place.all
+        @city = City.find(params[:city_id])
+        @places = @city.places
         #.order(by distance (longitude&latitude))
     end
 
