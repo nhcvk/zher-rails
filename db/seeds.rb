@@ -57,27 +57,6 @@ mockUser = [
 User.create(mockUser)
 puts "#{mockUser.length} users have been added"
 
-
-mockBookmark = [
-    {
-        user_id: 1,
-        place_id: 1
-    },
-    {
-        user_id: 2,
-        place_id: 2
-    },
-    {
-        user_id: 3,
-        place_id: 3
-    }
-]
-
-Bookmark.create(mockBookmark)
-puts "#{mockBookmark.length} bookmarks have been added"
-
-
-
 mockPlace = [
     {
         name: 'Taikooli',
@@ -134,6 +113,25 @@ mockPlace = [
 
 Place.create(mockPlace)
 puts "#{mockPlace.length} places have been added"
+
+
+mockBookmark = [
+    {
+        user_id: 1,
+        place_id: 1
+    },
+    {
+        user_id: 2,
+        place_id: 2
+    },
+    {
+        user_id: 3,
+        place_id: 3
+    }
+]
+
+Bookmark.create(mockBookmark)
+puts "#{mockBookmark.length} bookmarks have been added"
 
 
 
