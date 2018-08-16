@@ -5,7 +5,7 @@ class Api::V1::BookmarksController < Api::V1::BaseController
 
     def index
         @bookmarks = @user.bookmarks
-        render json: @bookmarks
+        # render json: @bookmarks
         #(.order by distance)
     end
 
