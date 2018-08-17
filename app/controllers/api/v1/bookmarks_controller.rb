@@ -20,7 +20,7 @@ class Api::V1::BookmarksController < Api::V1::BaseController
     def destroy
         @bookmark = @user.bookmarks.find(params[:id])
         @bookmark.destroy
-        head :no_content
+        render json: @bookmark, :include => {:city => {:only => :name}}
     end
 
     private
