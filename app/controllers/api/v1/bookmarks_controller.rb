@@ -14,7 +14,7 @@ class Api::V1::BookmarksController < Api::V1::BaseController
         # @bookmark.user = @user
         # @bookmark.place = @place
         @bookmark.save
-        render json: @bookmark
+        render json: @bookmark, :include => {:city => {:only => :name}}
     end
 
     def destroy
