@@ -10,11 +10,8 @@ class Api::V1::UsersController < Api::V1::BaseController
     end
 
     def update
-        if @user.update(user_params)
-            render :show
-          else
-            render_error
-        end
+        @user.update(user_params)
+        render json: @user
     end
 
     private
@@ -24,7 +21,7 @@ class Api::V1::UsersController < Api::V1::BaseController
     end
 
     def user_params
-        params.require(:place).permit(:name, :avatar_url, :biography, :email, :phone_number, :website, :wechat_id)
+        params.require(:user).permit(:name, :avatar_url, :biography, :email, :phone_number, :website, :wechat_id)
     end
 
     def render_error
