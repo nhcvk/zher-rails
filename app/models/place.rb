@@ -6,6 +6,6 @@ class Place < ApplicationRecord
     validates :name, presence: :true
     validates :description, presence: :true
     validates :longitude, presence: :true
-    validates :latitidue, presence: :true
+    validates :latitude, presence: :true
     # validates :photo_urls, presence: :true, length: { minimum: 1 }
 end
