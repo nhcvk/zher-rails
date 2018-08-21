@@ -24,11 +24,11 @@ class Api::V1::PlacesController < Api::V1::BaseController
     end
 
     def update
-        if @place.update(place_params)
-          render :show
-        else
-          render_error
-        end
+        @place.update(place_params)
+        puts "##########"
+        puts @place
+        puts params
+        render json: @place
     end
 
     def destroy
@@ -43,7 +43,7 @@ class Api::V1::PlacesController < Api::V1::BaseController
     end
 
     def place_params
-        params.require(:place).permit(:name, :description, :main_photo_url, :photo_urls, :user_id, :city_id, :latitude, :longitude)
+        params.require(:place).permit(:name, :description, :main_photo_url, :user_id, :city_id, :latitude, :longitude, :photo_urls => [])
     end
 
     def render_error
