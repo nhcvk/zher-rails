@@ -1,3 +1,12 @@
+City.delete_all
+User.delete_all
+Place.delete_all
+Bookmark.delete_all
+
+
+
+
+
 mockCity = [
     {
         name: "Chengdu"
