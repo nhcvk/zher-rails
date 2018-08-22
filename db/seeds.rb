@@ -1,37 +1,5 @@
-Bookmark.delete_all
 Place.delete_all
 
-City.delete_all
-User.delete_all
-
-
-
-
-
-
-
-
-
-
-
-
-mockCity = [
-    {
-        name: "成都"
-    },
-    {
-        name: "重庆"
-    },
-    {
-        name: "阿姆斯特丹
-        "
-    }
-]
-
-City.create(mockCity)
-puts "#{mockCity.length} cities have been added"
-
-p City.all
 
 mockPlace = [
     {
@@ -97,7 +65,7 @@ mockPlace = [
 厘途是否是那个理由，让你回望驻足",
         main_photo_url: "https://image.ibb.co/jnWLse/psb_17.jpg",
         photo_urls: [ "https://image.ibb.co/kTmBXe/psb_30.jpg", "https://image.ibb.co/mAA8dK/psb_26.jpg", "https://image.ibb.co/kCTddK/psb_28.jpg"],
-        user_id: 12,
+        user_id: 13,
         city_id: 1,
         latitude: 30.572815,
         longitude: 104.066803
@@ -120,7 +88,7 @@ mockPlace = [
 但身边有乐意倾听的人就好',
         main_photo_url: 'https://image.ibb.co/nG21Xe/psb_17.jpg',
         photo_urls: ['https://image.ibb.co/iWp4kz/psb_29.jpg', 'https://image.ibb.co/fNKLQz/psb_28.jpg', 'https://image.ibb.co/myW6yK/psb_31.jpg'],
-        user_id: 12,
+        user_id: 13,
         city_id: 1,
         latitude: 30.346234,
         longitude: 104.237853
@@ -143,7 +111,7 @@ mockPlace = [
 柔情漫溢，渗透干枯的心原',
         main_photo_url: 'https://image.ibb.co/f7uLQz/psb_26.jpg',
         photo_urls: ['https://image.ibb.co/m619kz/psb_30.jpg', 'https://image.ibb.co/j9MdCe/psb_29.jpg', 'https://image.ibb.co/hGON5z/psb_28.jpg'],
-        user_id: 12,
+        user_id: 13,
         city_id: 1,
         latitude: 30.234521,
         longitude: 104.066803
@@ -216,7 +184,7 @@ The Sense & Rand，推门起便感染上魔力
 揉捏与发酵中，自由的灵魂也正悄悄醒来',
         main_photo_url: 'https://image.ibb.co/j9vkQz/psb_17.jpg',
         photo_urls: ['https://image.ibb.co/gYHodK/psb_31.jpg', 'https://image.ibb.co/er6mXe/psb_30.jpg', 'https://image.ibb.co/jbCFQz/psb_26.jpg'],
-        user_id: 12,
+        user_id: 13,
         city_id: 1,
         latitude: 30.670184,
         longitude: 104.096007
@@ -249,10 +217,14 @@ The Sense & Rand，推门起便感染上魔力
 都映出浅浅的柔情",
         main_photo_url: 'https://image.ibb.co/hVwLse/psb_17.jpg',
         photo_urls: ['https://image.ibb.co/c1KC5z/psb_31.jpg', 'https://image.ibb.co/mwevQz/psb_29.jpg', 'https://image.ibb.co/j2KOCe/psb_26.jpg'],
-        user_id: 12,
+        user_id: 13,
         city_id: 1,
         latitude: 30.674866,
         longitude: 104.059683
     }
 
+
 ]
+
+Place.create(mockPlace)
+puts "#{mockPlace.length} cities have been added"
