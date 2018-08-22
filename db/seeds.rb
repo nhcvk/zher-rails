@@ -1,7 +1,9 @@
+Bookmark.delete_all
 Place.delete_all
+
 City.delete_all
 User.delete_all
-Bookmark.delete_all
+
 
 
 
