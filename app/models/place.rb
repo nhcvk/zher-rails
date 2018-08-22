@@ -1,6 +1,7 @@
 class Place < ApplicationRecord
     belongs_to :user
     belongs_to :city
+    has_many :bookmarks, dependent: :destroy
 
     validates :main_photo_url, presence: :true
     validates :name, presence: :true

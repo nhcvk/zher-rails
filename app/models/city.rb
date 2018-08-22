@@ -1,5 +1,5 @@
 class City < ApplicationRecord
-    has_many :places
+    has_many :places, dependent: :destroy
     has_many :users
-    has_many :bookmarks, through: :places
+    has_many :bookmarks, through: :places, dependent: :destroy
 end
